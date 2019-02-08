@@ -1,0 +1,21 @@
+<h1>Jobs#new</h1>
+<%= form_for(@job) do |f| %>
+
+<%= f.label :what, '仕事内容' %>
+<%= f.text_field :what %>
+
+<%= f.label :when, '日時' %>
+<%= f.text_field :when %>
+
+<%= f.label :place, '場所' %>
+<%= f.text_field :place %>
+
+<%= f.label :reward, '報酬' %>
+<%= f.text_field :reward %>
+
+<%= f.label :detail, '詳細' %>
+<%= f.text_field :detail %>
+
+<%= f.submit '募集する' %>
+
+<% end %>

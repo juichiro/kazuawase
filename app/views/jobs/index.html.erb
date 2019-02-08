@@ -1,0 +1,7 @@
+<h1>現在の仕事一覧ページ</h1>
+<% @jobs.each do |job| %>
+
+<p><%= job.when %></p>
+<p><%= link_to '詳細', job %></p>
+
+<% end %>
