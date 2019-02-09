@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample4">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">
+				KAZUAWASE
+			</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="navbarEexample4">
+			<ul class="nav navbar-nav">
+				<li><a href="/jobs/index">仕事一覧</a></li>
+				<li><a href="#">マイページ</a></li>
+				<li><a href="/jobs/new">新規の仕事の募集</a></li>
+				<li><a href="/sessions/destroy">ログアウト</a></li>
+			</ul>
+			<%= link_to '無料登録', new_user_path, class:"btn btn-default navbar-btn" %>
+			<%= link_to 'ログイン', sessions_new_path, class:"btn btn-default navbar-btn" %>
+		</div>
+	</div>
+</nav>
