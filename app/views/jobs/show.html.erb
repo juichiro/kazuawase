@@ -1,5 +1,6 @@
 <h1>job show</h1>
 <%= @job.what %>
 
+<%= render 'wants/wanttodo_withdraw_button', job: @job %>
 <%= link_to '編集', edit_job_path(@job) %>
 <%= link_to '削除', @job, method: :delete %>

@@ -1,0 +1,11 @@
+<% if current_user.apply?(job) %>
+    <%= form_for(current_user.wants.find_by(job_id: job.id), html: { method: :delete }) do |f| %>
+      <%= hidden_field_tag :job_id, job.id %>
+      <%= f.submit 'Cancel', class: 'btn btn-danger btn-block' %>
+    <% end %>
+  <% else %>
+    <%= form_for(current_user.wants.build) do |f| %>
+      <%= hidden_field_tag :job_id, job.id %>
+      <%= f.submit 'Apply', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  <% end %>

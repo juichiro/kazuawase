@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_08_075107) do
+ActiveRecord::Schema.define(version: 2019_02_11_135240) do
+
+  create_table "applications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_applications_on_job_id"
+    t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "contracts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_contracts_on_job_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
+  end
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "when"
@@ -32,5 +50,20 @@ ActiveRecord::Schema.define(version: 2019_02_08_075107) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_wants_on_job_id"
+    t.index ["user_id"], name: "index_wants_on_user_id"
+  end
+
+  add_foreign_key "applications", "jobs"
+  add_foreign_key "applications", "users"
+  add_foreign_key "contracts", "jobs"
+  add_foreign_key "contracts", "users"
   add_foreign_key "jobs", "users"
+  add_foreign_key "wants", "jobs"
+  add_foreign_key "wants", "users"
 end

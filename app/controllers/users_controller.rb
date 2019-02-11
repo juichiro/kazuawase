@@ -16,6 +16,10 @@ before_action :require_user_logged_in, only: [:show]
       render :new
     end 
   end
+  def wanttodolists
+    @wanttodolists = current_user.wanttodolists
+  end 
+ 
 
 private
 
