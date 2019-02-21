@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-	<div class="container-fluid">
+	<div class="container-fluid container-fluid-change">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample4">
 				<span class="sr-only">Toggle navigation</span>
@@ -7,21 +7,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">
+			<a class="navbar-brand bold" href="/">
 				KAZUAWASE
 			</a>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="navbarEexample4">
 			<ul class="nav navbar-nav">
-				<li><a href="/jobs/index">仕事一覧</a></li>
-				<li><a href="#">マイページ</a></li>
-				<li><a href="/jobs/new">新規の仕事の募集</a></li>
-				<li><a href="/users/:id/wanttodolists">応募した仕事</a></li>
-				<li><a href="/sessions/destroy">ログアウト</a></li>
+				<li><a href="/jobs/index">仕事を探す</a></li>
+				<li><a href="/mypage">マイページ</a></li>
+				<li><a href="/jobs/new">数合わせを募集する</a></li>
 			</ul>
-			<%= link_to '無料登録', new_user_path, class:"btn btn-default navbar-btn" %>
-			<%= link_to 'ログイン', sessions_new_path, class:"btn btn-default navbar-btn" %>
+			<%= link_to '無料登録', new_user_path, class:"btn btn-orange-white-m navbar-btn margin-left" %>
+			<%= link_to 'ログイン', sessions_new_path, class:"btn btn-orange-white-m navbar-btn" %>
+			<%= link_to 'ログアウト', logout_path,method: :delete, class:"btn btn-white-orange-m navbar-btn" %>
 		</div>
 	</div>
 </nav>

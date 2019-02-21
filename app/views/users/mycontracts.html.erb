@@ -3,28 +3,31 @@
       <li class="<%= 'active' if current_page?(myrecruit_path) %>"><%= link_to '募集状況', myrecruit_path %></li>
       <li class="<%= 'active' if current_page?(mycontract_path) %>"><%= link_to '契約状況', mycontract_path %></li>
       <li class="<%= 'active' if current_page?(wanttodolists_path) %>"><%= link_to '応募状況', wanttodolists_path %></li>
-      <li class="<%= 'active' if current_page?(jobsasworkers_path) %>"><%= link_to '私の仕事', jobsasworkers_path %></li>
+       <li class="<%= 'active' if current_page?(jobsasworkers_path) %>"><%= link_to '私の仕事', jobsasworkers_path %></li>
     </ul>
 </div>
+<div class='row'>
 <div class='col-xs-4'>
 <img class="media-object img-circle" src="<%= gravatar_url(current_user, { size: 300 }) %>" alt="">
 </div>
-<div class='col-xs-8'>
-<% @wanttodolists.each do |want| %>
+<div class='contract col-xs-8'>
+
+    <% @contracts.each do |contract| %>
 
 <div class="media">
 	<div class="media-body">
-		<h4 class="media-heading"><%= want.what %></h4>
-		(日時)<%= want.when %><br>(場所）<%= want.place %><br>(報酬)<%= want.reward %><br>(詳細)<%= want.detail %>
-		<div class='recruiter'>
-			<h5>募集者</h5>
-			<div class='man-box'>
-	<%= link_to want.user.name, want.user %>
-	<img class="media-object img-circle" src="<%= gravatar_url(want.user, { size: 30 }) %>" alt="">
-		</div>
+		<h4 class="media-heading"><%= contract.job.what %></h4>
+		<p>(日時)<%= contract.job.when %><br>(場所）<%= contract.job.place %><br>(報酬)<%= contract.job.reward %><br>(詳細)<%= contract.job.detail %></p>
+		
+			<h5>契約者</h5>
+		 <div class='man-box'>
+		 <%= link_to contract.user.name, contract.user %>
+		 <img class="media-object img-circle" src="<%= gravatar_url(contract.user, { size: 30 }) %>" alt="">
+		
 		</div>
 	</div>
 </div>
 
 <% end %>
+</div>
 </div>

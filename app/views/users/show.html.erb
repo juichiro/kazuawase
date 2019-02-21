@@ -1,3 +1,12 @@
-<h1>ユーザー詳細</h1>
-
-<h1><%= @user.name %></h1>
+<div class='page-header'>
+<h1>「<%= @user.name %>」の自己紹介ページ</h1>
+</div>
+<div class='row'>
+<div class='col-xs-4'>
+<img class="media-object img-circle" src="<%= gravatar_url(@user, { size: 300 }) %>" alt="">
+</div>
+<div class='myself col-xs-8'>
+	<h3>自己紹介</h3>
+	<p class='myself'><%= @user.myself %></p>
+</div>
+</div>

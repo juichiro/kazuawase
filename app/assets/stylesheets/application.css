@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+/*応募者をまとめる箱*/
+div.man-box {
+    border: solid 1px #ff5c00;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+div.page-header h1{
+    color: #ff5c00;
+}
+
+/*ボタンを文字オレンジ中白にする*/
+.btn.btn-orange-white-l{
+        color: #ff5c00;
+    background-color: white;
+    border-color: white;
+    border-radius: 20px;
+    border:solid 3px;
+    font-size: larger;
+}
+/*メディアの枠線をいい感じに*/
+.media{
+    border: solid 3px #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+}
+.btn.btn-orange-white-m{
+    color: #ff5c00;
+    background-color: white;
+    border-color: white;
+    border-radius: 20px ;
+    border:solid 3px;
+}
+.jumbotron{
+    background: url(cat.png)center;
+    padding:100px;
+}
+div.container-fluid.container-fluid-change{
+
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left:30px;
+}
+div.container-fluid.container-fluid-change div.navbar-header a.navbar-brand{
+        color: #ff5c00;
+    font-size: xx-large;
+}
+ul.nav.navbar-nav li a{
+    color:#ff5c00;
+}
+.btn.btn-white-orange-m{
+    color: white;
+    background-color:#ff5c00;
+    border-color: #ff5c00;
+    border-radius: 20px ;
+    border:solid 3px;
+}
+.margin-left{
+    margin-left:25px;
+}
+.bold{
+    font-weight:bold;
+}
+div.main-view p{
+    margin:13px 0px;
+}
+/*マイページのナビバーの色をテーマカラーに*/
+ul.nav.nav-tabs.nav-justified li a{
+    color:#ff5c00;
+}
+/*自己紹介の枠線*/
+p.myself{
+    border: solid #eee;
+    border-radius: 30px;
+    padding: 30px;
+}
+/*flashの色の変換*/
+.alert-danger {
+    color:white;
+    background-color: #ff5c00;
+    border-color: #ff5c00;
+}
+.alert-success{
+  color:white;
+    background-color: #ff5c00;
+    border-color: #ff5c00;
+}

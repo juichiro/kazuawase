@@ -1,9 +1,11 @@
 class JobsController < ApplicationController
+  before_action :require_user_logged_in
   def index
-    @jobs = current_user.jobs
+    @jobs = Job.all
   end
   def show
-    @job = current_user.jobs.find(params[:id])
+    @job = Job.find(params[:id])
+    @wants = @job.wants
   end
   def new
     @job = current_user.jobs.build

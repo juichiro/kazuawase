@@ -1,21 +1,29 @@
-<h1>Jobs#new</h1>
+<div class='page-header'>
+<h1>仕事の新規募集</h1>
+</div>
+
 <%= form_for(@job) do |f| %>
+<div class='form-group'>
+  <%= f.label :what, '仕事内容' %>
+  <%= f.text_field :what, class:'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :when, '日時' %>
+  <%= f.text_field :when, class:'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :place, '場所' %>
+  <%= f.text_field :place, class:'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :reward, '報酬' %>
+  <%= f.text_field :reward, class:'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :detail, '詳細' %>
+  <%= f.text_field :detail, class:'form-control' %>
+</div>
 
-<%= f.label :what, '仕事内容' %>
-<%= f.text_field :what %>
-
-<%= f.label :when, '日時' %>
-<%= f.text_field :when %>
-
-<%= f.label :place, '場所' %>
-<%= f.text_field :place %>
-
-<%= f.label :reward, '報酬' %>
-<%= f.text_field :reward %>
-
-<%= f.label :detail, '詳細' %>
-<%= f.text_field :detail %>
-
-<%= f.submit '募集する' %>
+<%= f.submit '募集する', class:'btn btn-white-orange-m' %>
 
 <% end %>

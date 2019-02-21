@@ -1,0 +1,21 @@
+<div class='page-header'>
+    <h1>マイページ</h1>
+</div>
+<div class="col-xs-12">
+    <ul class="nav nav-tabs nav-justified">
+      <li class="<%= 'active' if current_page?(myrecruit_path) %>"><%= link_to '募集状況', myrecruit_path %></li>
+      <li class="<%= 'active' if current_page?(mycontract_path) %>"><%= link_to '契約状況', mycontract_path %></li>
+      <li class="<%= 'active' if current_page?(wanttodolists_path) %>"><%= link_to '応募状況', wanttodolists_path %></li>
+       <li class="<%= 'active' if current_page?(jobsasworkers_path) %>"><%= link_to '私の仕事', jobsasworkers_path %></li>
+    </ul>
+</div>
+<div class='row'>
+<div class='col-xs-4'>
+<img class="media-object img-circle" src="<%= gravatar_url(current_user, { size: 300 }) %>" alt="">
+</div>
+<div class='myself col-xs-8'>
+	<h3>「<%= current_user.name %>」の自己紹介</h3>
+	<p class='myself'><%= current_user.myself %></p>
+	<%= link_to '自己紹介の編集', edit_user_path(current_user), class:'btn btn-white-orange-m' %>
+</div>
+</div>

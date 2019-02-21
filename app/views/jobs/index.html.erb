@@ -1,7 +1,16 @@
-<h1>現在の仕事一覧ページ</h1>
+<div class="page-header">
+<h1>仕事を探す</h1>
+</div>
 <% @jobs.each do |job| %>
 
-<p><%= job.when %></p>
-<p><%= link_to '詳細', job %></p>
+<div class="media">
+	<div class='media-left'>
+		<img class="media-object img-circle" src="<%= gravatar_url(job.user, { size: 100 }) %>" alt="">
+		</div>
+	<div class="media-body">
+		<h4 class="media-heading"><%= job.what %></h4>
+		(日時)<%= job.when %><br>(場所）<%= job.place %><br>(報酬)<%= job.reward %><br>(詳細)<%= job.detail %><br>(募集者)<%= link_to job.user.name, job.user %><br><%= link_to 'この仕事をやりたい', job, class:'btn btn-orange-white-m'%>
+	</div>
+</div>
 
 <% end %>

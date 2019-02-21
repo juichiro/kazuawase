@@ -9,18 +9,19 @@
 <div class='col-xs-4'>
 <img class="media-object img-circle" src="<%= gravatar_url(current_user, { size: 300 }) %>" alt="">
 </div>
-<div class='col-xs-8'>
-<% @wanttodolists.each do |want| %>
+<div class='myjob col-xs-8'>
+
+    <% @jobsasworkers.each do |myjob| %>
 
 <div class="media">
 	<div class="media-body">
-		<h4 class="media-heading"><%= want.what %></h4>
-		(日時)<%= want.when %><br>(場所）<%= want.place %><br>(報酬)<%= want.reward %><br>(詳細)<%= want.detail %>
-		<div class='recruiter'>
-			<h5>募集者</h5>
+		<h4 class="media-heading"><%= myjob.what %></h4>
+		(日時)<%= myjob.when %><br>(場所）<%= myjob.place %><br>(報酬)<%= myjob.reward %><br>(詳細)<%= myjob.detail %>
+		<div class='contracters'>
+			<h5>雇い主</h5>
 			<div class='man-box'>
-	<%= link_to want.user.name, want.user %>
-	<img class="media-object img-circle" src="<%= gravatar_url(want.user, { size: 30 }) %>" alt="">
+		<%= link_to myjob.user.name, myjob.user %>
+		<img class="media-object img-circle" src="<%= gravatar_url(myjob.user, { size: 30 }) %>" alt="">
 		</div>
 		</div>
 	</div>

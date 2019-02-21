@@ -1,2 +1,50 @@
-<h1>Toppages#index</h1>
-<p>Find me in app/views/toppages/index.html.erb</p>
+<% if logged_in? %>
+<div class="page-header">
+<h1>仕事を探す</h1>
+</div>
+<% @jobs.each do |job| %>
+
+<div class="media">
+	<div class='media-left'>
+		<img class="media-object img-circle" src="<%= gravatar_url(job.user, { size: 100 }) %>" alt="">
+		</div>
+	<div class="media-body">
+		<h4 class="media-heading"><%= job.what %></h4>
+		(日時)<%= job.when %><br>(場所）<%= job.place %><br>(報酬)<%= job.reward %><br>(詳細)<%= job.detail %><br>(募集者)<%= link_to job.user.name, job.user %><br><%= link_to 'この仕事をやりたい', job, class:'btn btn-orange-white-m'%>
+	</div>
+</div>
+
+<% end %>
+
+<% else %>
+<div class="page-header main-view">
+	<div class='main-view-left'>
+	<h1 class='bold'>数合わせが欲しい人、小銭を稼ぎたい暇人集まれ！</h1>
+	<p>Aさん「合コンに欠員が出て一人足りない。誰でもいいから数合わせの人が欲しい。。」<br>
+	Bさん「暇だから楽に小銭稼ぎがしたいなー。」<br>
+	「KAZUAWASE」はそんなAさんとBさんを繋げるサービスです。<br>
+	数合わせが欲しい人と、時間を持て余していて小銭を稼ぎたい人を繋げます。
+	</p>
+	<%= link_to 'KAZUAWASEをはじめる', new_user_path, class:'btn btn-orange-white-l' %>
+	</div>
+	<div class='jumbotron'>
+		
+	</div>
+</div>
+<div class="page-header">
+<h1 class='bold'>仕事を探す</h1>
+</div>
+<% @jobs.each do |job| %>
+
+<div class="media">
+	<div class='media-left'>
+		<img class="media-object img-circle" src="<%= gravatar_url(job.user, { size: 100 }) %>" alt="">
+		</div>
+	<div class="media-body">
+		<h4 class="media-heading"><%= job.what %></h4>
+		(日時)<%= job.when %><br>(場所）<%= job.place %><br>(報酬)<%= job.reward %><br>(詳細)<%= job.detail %><br>(募集者)<%= link_to job.user.name, job.user %><br><%= link_to 'この仕事をやりたい', job, class:'btn btn-orange-white-m'%>
+	</div>
+</div>
+
+<% end %>
+<% end %>

@@ -1,0 +1,13 @@
+
+<% if current_user == job.user %>
+<h2>あなたが募集した仕事に応募がありました。</h2>
+<% @wants.each do |want| %>
+<h3>(応募者)<%= link_to want.user.name, want.user %></h3>
+ <%= form_for(current_user.contracts.build) do |f| %>
+      <%= hidden_field_tag :user, want.user.id %> 
+      <%= hidden_field_tag :job, want.job.id %>
+      <%= f.submit '契約する', class: 'btn btn-primary' %>
+<% end %>
+
+<% end %>
+<% end %>

@@ -1,6 +1,14 @@
-<h1>job show</h1>
-<%= @job.what %>
-
+<div class = 'page-header'>
+<h1>仕事の詳細</h1>
+</div>
+<div class="media">
+	<div class="media-body">
+		<h4 class="media-heading"><%= @job.what %></h4>
+		(日時)<%= @job.when %><br>(場所）<%= @job.place %><br>(報酬)<%= @job.reward %><br>(詳細)<%= @job.detail %><br>(募集者)<%= link_to @job.user.name, @job.user %>
+	</div>
+</div>
+<%= link_to '編集', edit_job_path(@job), class:'btn btn-primary' %>
+<%= link_to '削除', @job, method: :delete, class:'btn btn-danger' %>
 <%= render 'wants/wanttodo_withdraw_button', job: @job %>
-<%= link_to '編集', edit_job_path(@job) %>
-<%= link_to '削除', @job, method: :delete %>
+<!--<%= render 'contracts/approve', job: @job %>-->
+
